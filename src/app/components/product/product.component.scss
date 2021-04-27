@@ -1,0 +1,64 @@
+@import './src/mixins.scss';
+
+img{
+    width: auto;
+    height: 200px;
+}
+
+:host ::ng-deep{
+    mat-card{
+        height: 540px;
+        max-height: 540px;
+        margin-top: 30px;
+        h2{
+            @include reminderTitleWrap(2, 27.6px);
+            font-size: 23px;
+        }
+        
+        h3{
+            @include reminderTitleWrap(2, 24px);
+            font-size: 20px;
+        }
+        
+        h4{
+            @include reminderTitleWrap(2, 20.4px);
+            font-size: 17px;
+        }
+
+        .title{
+            margin-top: 20px;
+            *{
+                margin-bottom: 0;
+            }           
+        }
+
+        .subtitle{
+            @include reminderTitleWrap(2, 25.5px);        
+            margin-bottom: 10px; 
+            font-size: 17px;           
+        }
+        .value{
+            margin-bottom: 20px;
+        }
+        .details{
+            a{
+                color:#007bff;
+                text-decoration: underline;
+            }
+        }
+        .promotion{
+            @include reminderTitleWrap(2, 22.5px);
+            font-size: 15px;
+        }
+
+        .cdk-drop-list{
+            height: 100%;
+            position: relative;
+        }
+        .cart{
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+

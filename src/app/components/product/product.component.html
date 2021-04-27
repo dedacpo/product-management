@@ -1,0 +1,28 @@
+<mat-card>
+
+
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let order of data.order" [cdkDragDisabled]="!isEditable" cdkDrag>
+            <div *ngIf="order === 'imageURL'" class="display-flex justify-content-center">
+                <img [src]="data[order] | safe: 'url'" />
+            </div>
+            <div *ngIf="order === 'title' || order === 'subtitle' || order === 'promotion'" class="{{order}}" [innerHtml]="data[order] | safe: 'html'">
+                
+            </div>
+            <div *ngIf="order == 'value'" class="value">
+                <b>RD{{data.value | currency: data.currency}}/Unit</b>
+            </div>
+
+            <div *ngIf="order == 'details'" class="details">
+                <a>View details</a>
+            </div>
+
+            <div *ngIf="order == 'cart'" class="cart">
+               <app-quantity></app-quantity>
+            </div>
+        </div>
+    </div>
+
+
+
+</mat-card>
