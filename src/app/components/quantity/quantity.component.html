@@ -1,1 +1,24 @@
-<p>quantity works!</p>
+<div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6 quantity"> 
+            <button aria-label="remove" (click)="remove()">
+                <mat-icon class="icon-add-remove" aria-hidden="true">remove_circle_outline</mat-icon>
+            </button>
+            <input (ngModelChange)="updateStatusButton($event)" [ngModel]="quantity" />
+            <button aria-label="add" (click)="add()">
+                <mat-icon class="icon-add-remove" aria-hidden="true">add_circle_outline</mat-icon>
+            </button>    
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6 add-cart">
+            <button [ngClass]="{'disabled': button.disabled}" (click)="addToCart()" aria-label="add to cart">
+                <span *ngIf="button.name == 'add'">ADD</span>
+                <span *ngIf="button.name == 'update'">UPDATE</span>
+                <mat-icon *ngIf="button.name == 'added'" class="icon" aria-hidden="true">check</mat-icon>
+            </button>            
+           
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,45 @@
+@import '/src/variables.scss';
+
+button{
+    background-color: transparent;
+    border:none;
+}
+
+.icon-add-remove{
+    color: $buttons-color;
+    font-size: 30px;
+}
+
+.quantity{
+    display: flex;
+    justify-content: space-between;
+    button{
+        padding:0;
+    }
+    input{
+        max-width: 35px;
+        height: 30px;
+        border: 0.5px solid #dcdcdc;
+        border-radius: 5px;
+        margin:auto;
+        text-align: center;
+    }
+}
+
+.add-cart{
+    button{
+        width: 100%;
+        padding: 10px 5px;
+        color: $buttons-color;
+        font-weight: bold;
+        border: 2px solid $buttons-color;
+        border-radius: 5px;
+        &.disabled{
+            background-color: #DFDEDE;
+            border-radius: 5px;            
+            color: #BCBBBB;
+            border:none;
+            pointer-events: none;
+        }
+    }
+}

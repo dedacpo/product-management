@@ -18,7 +18,7 @@
             </div>
 
             <div *ngIf="order == 'cart'" class="cart">
-               <app-quantity></app-quantity>
+               <app-quantity [productId]="data.id"></app-quantity>
             </div>
         </div>
     </div>

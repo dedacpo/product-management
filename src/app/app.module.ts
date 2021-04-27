@@ -13,6 +13,11 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SafePipe } from './pipes/safe.pipe';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule }   from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import * as storeReducers from './ngStore/store.reducer';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +37,17 @@ import { SafePipe } from './pipes/safe.pipe';
     MatCardModule,
     HttpClientModule,
     DragDropModule,
+    MatIconModule,
+    FormsModule,
+    StoreModule.forRoot({
+      cart: storeReducers.cartReducer,
+    })
   ],
   exports:[
     CKEditorModule,
     MatCardModule,
     DragDropModule,
+    MatIconModule
   ],
   providers: [SafePipe],
   bootstrap: [AppComponent]

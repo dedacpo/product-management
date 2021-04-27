@@ -1,4 +1,5 @@
 @import './src/mixins.scss';
+@import './src/variables.scss';
 
 img{
     width: auto;
@@ -42,7 +43,7 @@ img{
         }
         .details{
             a{
-                color:#007bff;
+                color:$buttons-color;
                 text-decoration: underline;
             }
         }
@@ -58,6 +59,7 @@ img{
         .cart{
             position: absolute;
             bottom: 0;
+            width: 100%;
         }
     }
 }
