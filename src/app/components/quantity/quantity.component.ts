@@ -24,12 +24,16 @@ export class QuantityComponent implements OnInit {
 
   @Input() productId: string;
 
+  @Input() isEditable: boolean;
+
   ngOnInit(): void {
     this.store.select('cart').subscribe((cart: ICart[]) => {
       this.cart = JSON.parse(JSON.stringify(cart));
       const product = this.cart.find(item => item.productId === this.productId);
       if (product) {
         this.quantity = product.quantity;
+        this.button.name = 'added';
+        this.button.disabled = true;
       }
     });
   }
@@ -48,7 +52,7 @@ export class QuantityComponent implements OnInit {
   }
 
   addToCart() {
-    if (this.button.disabled)
+    if (this.button.disabled || !this.isEditable)
       return;
     const index = this.cart.findIndex(item => item.productId === this.productId);
 
@@ -60,11 +64,15 @@ export class QuantityComponent implements OnInit {
   }
 
   add() {
+    if (!this.isEditable)
+      return;
     this.quantity += 1;
     this.updateStatusButton();
   }
 
   remove() {
+    if (!this.isEditable)
+      return;
     if (this.quantity > 0) {
       this.quantity -= 1;
       this.updateStatusButton();

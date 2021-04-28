@@ -1,24 +1,24 @@
-<mat-card>
+<mat-card [ngClass]="{'selected': selected}" >
 
 
-    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" >
         <div class="example-box" *ngFor="let order of data.order" [cdkDragDisabled]="!isEditable" cdkDrag>
             <div *ngIf="order === 'imageURL'" class="display-flex justify-content-center">
                 <img [src]="data[order] | safe: 'url'" />
             </div>
-            <div *ngIf="order === 'title' || order === 'subtitle' || order === 'promotion'" class="{{order}}" [innerHtml]="data[order] | safe: 'html'">
+            <div *ngIf="order === 'title' || order === 'subtitle' || order === 'promotion'" class="{{order}} text-align-center" [innerHtml]="data[order] | safe: 'html'">
                 
             </div>
-            <div *ngIf="order == 'value'" class="value">
+            <div *ngIf="order == 'value'" class="value text-align-center">
                 <b>RD{{data.value | currency: data.currency}}/Unit</b>
             </div>
 
-            <div *ngIf="order == 'details'" class="details">
+            <div *ngIf="order == 'details'" class="details text-align-center">
                 <a>View details</a>
             </div>
 
             <div *ngIf="order == 'cart'" class="cart">
-               <app-quantity [productId]="data.id"></app-quantity>
+               <app-quantity [isEditable]="!isEditable" [productId]="data.id"></app-quantity>
             </div>
         </div>
     </div>

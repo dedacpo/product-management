@@ -1,0 +1,27 @@
+@import '../../../variables.scss';
+
+header{
+    background-color: $darker-background-theme-color;
+    padding: 29px 0 26px;
+    .div-header-button{       
+        .button-header{
+            background-color: #E9E9E9;
+            font-size: 22px;
+            border-radius: 20px;
+            border:none;
+            display: flex;
+            padding: 5px 20px;
+            span{
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 400;
+            }
+            .icon{
+                margin: auto;
+            }
+        }
+        .title{
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }    
+}

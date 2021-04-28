@@ -2,41 +2,51 @@
     {
         "id": "modelo_negra",
         "imageURL": "./assets/images/Negra-modelo_botella.png",
-        "title": "<h2>Modelo Negra<h2>",
+        "title": "<h2>Modelo Negra</h2>",
         "subtitle": "<span>12 Unit &#149; 33oz Bottle</span>",
         "value": 32,
         "currency": "USD",
-        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free<span>",
+        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free</span>",
         "order":["imageURL","title","subtitle","value","promotion", "details","cart"]
     },
     {
         "id": "colorado_apia",
         "imageURL": "./assets/images/colorado-appia.png",
-        "title": "<h2>Colorado Apia<h2>",
+        "title": "<h2>Colorado Apia</h2>",
         "subtitle": "<span>16 Unit &#149; 330ml Bottle</span>",
         "value": 43,
         "currency": "USD",
-        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free Red Bull or 2 Pepsi Black.<span>",
+        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free Red Bull or 2 Pepsi Black.</span>",
         "order":["imageURL","title","subtitle","value","promotion",  "details","cart"]
     },
     {
         "id": "brahma_light",
         "imageURL": "./assets/images/brahma_light.png",
-        "title": "<h2>Brahma Light very very light 33n Onz - Caja [12 Botellas]<h2>",
+        "title": "<h2>Brahma Light very very light 33n Onz - Caja [12 Botellas]</h2>",
         "subtitle": "<span>16 Unit &#149; 330ml Bottle</span>",
         "value": 43,
         "currency": "USD",
-        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free Red Bull or 2 Pepsi Black.<span>",
+        "promotion": "<span style=\"color: green;\">Buy 3, get 1 free Red Bull or 2 Pepsi Black.</span>",
         "order":["imageURL","title","subtitle","value","promotion", "details", "cart"]
     },
     {
         "id": "budweiser",
         "imageURL": "./assets/images/budweiser.png",
-        "title": "<h2>Budweiser<h2>",
+        "title": "<h2>Budweiser</h2>",
         "subtitle": "<span>16 Unit &#149; 330ml Bottle and extra long summary on multiple lines</span>",
         "value": 26,
         "currency": "USD",
-        "promotion": "<span style=\"color: green;\">For every 5 you buy, get up to 3 free Red Bull or 2 free Pepsi Black<span>",
+        "promotion": "<span style=\"color: green;\">For every 5 you buy, get up to 3 free Red Bull or 2 free Pepsi Black</span>",
+        "order":["imageURL","title","subtitle","value","promotion",  "details","cart"]
+    },
+    {
+        "id": "colorado_cauim",
+        "imageURL": "./assets/images/colorado-cauim.png",
+        "title": "<h2>Colorado Cauim</h2>",
+        "subtitle": "<span>16 Unit &#149; 330ml Bottle and extra long summary on multiple lines</span>",
+        "value": 58,
+        "currency": "BRL",
+        "promotion": "<span style=\"color: green;\">For every 5 you buy, get up to 3 free Red Bull or 2 free Pepsi Black</span>",
         "order":["imageURL","title","subtitle","value","promotion",  "details","cart"]
     }
 ]

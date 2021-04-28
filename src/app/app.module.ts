@@ -14,9 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SafePipe } from './pipes/safe.pipe';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import * as storeReducers from './ngStore/store.reducer';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule } from '@angular/material/input';
+import { FiltersComponent } from './components/filters/filters.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -27,7 +33,10 @@ import * as storeReducers from './ngStore/store.reducer';
     ManagementComponent,
     QuantityComponent,
     TextEditorComponent,
-    SafePipe
+    SafePipe,
+    TopBarComponent,
+    FooterComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,15 +48,23 @@ import * as storeReducers from './ngStore/store.reducer';
     DragDropModule,
     MatIconModule,
     FormsModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
     StoreModule.forRoot({
       cart: storeReducers.cartReducer,
+      products: storeReducers.productsReducer
     })
   ],
   exports:[
     CKEditorModule,
     MatCardModule,
     DragDropModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [SafePipe],
   bootstrap: [AppComponent]

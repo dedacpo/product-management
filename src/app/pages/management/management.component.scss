@@ -1,0 +1,39 @@
+@import '/src/variables.scss';
+
+
+.product-container{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    .icon{
+        position: absolute;
+        z-index: 2;
+        margin: 10px;
+        right: 0;
+        cursor: move;
+        top: 30px;
+    }
+    
+}
+
+label{
+    margin-top: 30px;
+    font-size: 25px;
+    color: #848484;
+}
+
+:host ::ng-deep{
+    .ck-editor__editable_inline{
+        border: 1px solid #bbbbbb;
+    }
+}
+
+input{
+    width: 100%;
+    border: 1px solid #bbbbbb;
+}
+
+.iconDanger{
+    color: $danger;
+}

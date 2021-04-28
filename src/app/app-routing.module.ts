@@ -8,7 +8,7 @@ const routes: Routes = [
     {
         path: '', component: StoreComponent, 
         data: {
-            pageName: 'Products',
+            pageName: 'Store',
             backButtonPath: null
         }
     },

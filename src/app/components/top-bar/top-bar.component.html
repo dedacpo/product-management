@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+        <div class="div-header-button row" *ngIf="routeParams">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                <button [routerLink]="routeParams.data.backButtonPath" *ngIf="routeParams.data.backButtonPath"
+                    class="button-header">
+                    <mat-icon class="icon" aria-hidden="true">arrow_back</mat-icon>
+                    <span>Back</span>
+                </button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                <h1 class="title">{{routeParams.data.pageName}}</h1>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4 display-flex justify-content-flex-end">
+                <button class="button-header" mat-button [matMenuTriggerFor]="menu">Menu</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['']">Store</button>
+                    <button mat-menu-item [routerLink]="['management']">Management</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</header>

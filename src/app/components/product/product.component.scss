@@ -56,11 +56,17 @@ img{
             height: 100%;
             position: relative;
         }
-        .cart{
+        .example-list div:nth-child(7){
             position: absolute;
             bottom: 0;
             width: 100%;
         }
+        .cart{
+           
+        }
+    }
+    .selected{
+        border: 2px solid $buttons-color;
     }
 }
 

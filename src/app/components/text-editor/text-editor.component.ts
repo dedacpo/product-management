@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeEvent, CKEditorComponent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 
@@ -10,14 +10,20 @@ import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 })
 export class TextEditorComponent implements OnInit {
   
-  data: string = '';
+  @Input() dataReceived: string;
 
   Editor = DecoupledEditor;
+
+
+  @Output() onChangeText:EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+
 
   onReady(editor) {
     editor.ui.getEditableElement().parentElement.insertBefore(
@@ -27,7 +33,7 @@ export class TextEditorComponent implements OnInit {
   }
 
   onChange({editor}: ChangeEvent ){
-    console.log("editor", editor.getData())
+    this.onChangeText.emit( editor.getData());
   }
 
 }

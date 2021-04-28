@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from 'src/app/models/product.interface';
 
 @Component({
@@ -11,6 +11,8 @@ export class ProductComponent implements OnInit {
 
   @Input() data: IProduct;
   @Input() isEditable: boolean;
+  @Input() selected: boolean;
+  @Output() onUpdateOrderInternal:EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +21,7 @@ export class ProductComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.data.order, event.previousIndex, event.currentIndex);
+    this.onUpdateOrderInternal.emit(this.data);
   }
 
 }

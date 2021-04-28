@@ -1,6 +1,7 @@
 <div class="container">
+    <app-filters (onUpdateSearch)="searchProduct($event)" (onUpdateOrder)="orderProducts($event)"></app-filters>
     <div class="row">
-        <app-product *ngFor="let product of products" [data]="product" [isEditable]="false" class="col-lg-3 col-md-4 col-sm-6 col-12"></app-product>
+        <app-product *ngFor="let product of filteredProducts" [data]="product" [isEditable]="false" class="col-lg-3 col-md-4 col-sm-6 col-12"></app-product>
     </div>
     
 </div>

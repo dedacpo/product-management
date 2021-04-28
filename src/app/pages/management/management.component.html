@@ -1,1 +1,48 @@
-<p>management works!</p>
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <button (click)="setSelectedProduct(product)" *ngFor="let product of products" cdkDrag
+                    class="product-container">
+                    <mat-icon class="icon" aria-label="move product">open_with</mat-icon>
+                    <app-product (onUpdateOrderInternal)="updateOrderInternal($event)" class="example-box" [data]="product" [selected]="selectedId === product.id"
+                        [isEditable]="true"></app-product>
+                </button>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12" *ngIf="selectedId">
+            <div>
+                <label>Image URL:</label><mat-icon *ngIf="invalid.imageURL" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon><br/>
+                <input (ngModelChange)="update($event,'imageURL')" [ngModel]="selectedProduct.imageURL" />
+            </div>
+            <label>Title:</label> <mat-icon *ngIf="invalid.title" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon>
+            <app-text-editor [dataReceived]="selectedProduct.title" (onChangeText)="update($event,'title')">
+            </app-text-editor>
+
+            <label>Subtitle:</label><mat-icon *ngIf="invalid.subtitle" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon>
+            <app-text-editor [dataReceived]="selectedProduct.subtitle" (onChangeText)="update($event,'subtitle')">
+            </app-text-editor>
+            <div>
+                <label>Price:</label><mat-icon *ngIf="invalid.value" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon><br/>
+                <input (ngModelChange)="update($event,'value')" [ngModel]="selectedProduct.value" />
+            </div>
+
+            <div>
+                <label>Currency:</label><mat-icon *ngIf="invalid.currency" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon><br/>
+                <input (ngModelChange)="update($event,'currency')" [ngModel]="selectedProduct.currency" />
+
+            </div>
+
+            <label>Promotion text:</label><mat-icon *ngIf="invalid.promotion" class="icon iconDanger" aria-label="invalid field">dangerous</mat-icon>
+            <app-text-editor [dataReceived]="selectedProduct.promotion" (onChangeText)="update($event,'promotion')">
+            </app-text-editor>
+
+        </div>
+    </div>
+
+
+
+
+</div>
