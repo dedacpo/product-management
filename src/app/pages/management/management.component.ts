@@ -41,7 +41,7 @@ export class ManagementComponent implements OnInit {
     this.store.dispatch(products({ products: this.products }));
   }
 
-  update(event, field) {
+  update(event:string | number, field:string) {
     if(event == ''){
       this.invalid[field] = true;
       return;
@@ -54,7 +54,7 @@ export class ManagementComponent implements OnInit {
     this.store.dispatch(products({ products: this.products }));
   }
 
-  setSelectedProduct(product) {
+  setSelectedProduct(product:IProduct) {
     if(product.id == this.selectedId)
       return;
     this.selectedId = undefined;
@@ -72,7 +72,7 @@ export class ManagementComponent implements OnInit {
     })
   }
 
-  updateOrderInternal(product){
+  updateOrderInternal(product: IProduct){
     const productProv = this.products.find(item => item.id == product.id);
     productProv.order = product.order;
     this.store.dispatch(products({ products: this.products }));

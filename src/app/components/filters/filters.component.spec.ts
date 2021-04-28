@@ -22,4 +22,20 @@ describe('FiltersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should change the searchWord to event passed and emit an event', () => {
+    const spy = spyOn(component.onUpdateSearch, 'emit');
+    component.updateSearch('word');
+    expect(component.searchWord).toEqual('word');
+    expect(spy).toHaveBeenCalledWith('word');
+  });
+
+  it('should  emit event onUpdateOrder when updateOrder method is called', () => {
+    const spy = spyOn(component.onUpdateOrder, 'emit');
+    const event = {
+      value: 'tite asc'
+    }
+    component.updateOrder(event);
+    expect(spy).toHaveBeenCalledWith('tite asc');
+  });
 });

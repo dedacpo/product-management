@@ -20,7 +20,7 @@ export class FiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateSearch(event){
+  updateSearch(event:string){
     this.searchWord = event;
     this.onUpdateSearch.emit(this.searchWord);
   }

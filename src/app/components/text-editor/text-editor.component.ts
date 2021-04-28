@@ -23,8 +23,6 @@ export class TextEditorComponent implements OnInit {
 
   }
 
-
-
   onReady(editor) {
     editor.ui.getEditableElement().parentElement.insertBefore(
       editor.ui.view.toolbar.element,
@@ -33,6 +31,7 @@ export class TextEditorComponent implements OnInit {
   }
 
   onChange({editor}: ChangeEvent ){
+    console.log("editor", editor)
     this.onChangeText.emit( editor.getData());
   }
 

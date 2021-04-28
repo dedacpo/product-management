@@ -22,7 +22,7 @@ export class StoreComponent implements OnInit {
     });
   }
 
-  searchProduct(event) {
+  searchProduct(event:string) {
     this.filteredProducts = [];
     const keys = Object.keys(this.products[0]);
     keys.forEach(item => {
@@ -39,10 +39,12 @@ export class StoreComponent implements OnInit {
     if(event)
       this.order = event;
     this.filteredProducts.sort((firstElement, secondElement) => {
-      if (secondElement[this.order.field] > firstElement[this.order.field]) { return this.order.order == 'asc' ? - 1 : 1; }
-      if (secondElement[this.order.field] < firstElement[this.order.field]) { return this.order.order == 'desc' ? -1 : 1; }
-
-      return 0;
+      if (secondElement[this.order.field] > firstElement[this.order.field] && this.order.order == 'asc') { 
+        return -1 ; 
+      }
+      if (secondElement[this.order.field] < firstElement[this.order.field] && this.order.order == 'desc') { 
+        return -1; 
+      }
     })
   }
 

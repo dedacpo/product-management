@@ -38,7 +38,7 @@ export class QuantityComponent implements OnInit {
     });
   }
 
-  updateStatusButton(event?) {
+  updateStatusButton(event?: number) {
     if(event){
       this.quantity = event;
     }
@@ -52,7 +52,7 @@ export class QuantityComponent implements OnInit {
   }
 
   addToCart() {
-    if (this.button.disabled || !this.isEditable)
+    if (this.button.disabled || this.isEditable)
       return;
     const index = this.cart.findIndex(item => item.productId === this.productId);
 
@@ -64,14 +64,14 @@ export class QuantityComponent implements OnInit {
   }
 
   add() {
-    if (!this.isEditable)
+    if (this.isEditable)
       return;
     this.quantity += 1;
     this.updateStatusButton();
   }
 
   remove() {
-    if (!this.isEditable)
+    if (this.isEditable)
       return;
     if (this.quantity > 0) {
       this.quantity -= 1;

@@ -18,7 +18,7 @@
             </div>
 
             <div *ngIf="order == 'cart'" class="cart">
-               <app-quantity [isEditable]="!isEditable" [productId]="data.id"></app-quantity>
+               <app-quantity [isEditable]="isEditable" [productId]="data.id"></app-quantity>
             </div>
         </div>
     </div>

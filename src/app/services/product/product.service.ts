@@ -12,6 +12,6 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts():Observable<IProduct[]>{
-    return this.http.get<any>('./assets/getProducts.json')
+    return this.http.get<IProduct[]>('./assets/getProducts.json')
   }
 }
