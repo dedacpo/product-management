@@ -31,7 +31,6 @@ export class TextEditorComponent implements OnInit {
   }
 
   onChange({editor}: ChangeEvent ){
-    console.log("editor", editor)
     this.onChangeText.emit( editor.getData());
   }
 
