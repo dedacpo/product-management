@@ -6,14 +6,14 @@
             <div *ngIf="order === 'imageURL'" class="display-flex justify-content-center">
                 <img [src]="data[order] | safe: 'url'" />
             </div>
-            <div *ngIf="order === 'title' || order === 'subtitle' || order === 'promotion'" class="{{order}} text-align-center" [innerHtml]="data[order] | safe: 'html'">
+            <div *ngIf="order === 'title' || order === 'subtitle' || order === 'promotion'" class="{{order}}" [innerHtml]="data[order] | safe: 'html'">
                 
             </div>
-            <div *ngIf="order == 'value'" class="value text-align-center">
+            <div *ngIf="order == 'value'" class="value">
                 <b>RD{{data.value | currency: data.currency}}/Unit</b>
             </div>
 
-            <div *ngIf="order == 'details'" class="details text-align-center">
+            <div *ngIf="order == 'details'" class="details">
                 <a>View details</a>
             </div>
 
