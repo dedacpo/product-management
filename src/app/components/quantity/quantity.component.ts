@@ -40,11 +40,13 @@ export class QuantityComponent implements OnInit {
 
   updateStatusButton(event?) {
 
-    if(event && isNaN(Number(event))) return
+    if(event == '' ){
+      this.quantity = 0;
+    }
 
-    if(event || event == ''){
-      this.quantity = Number(event);
-    }    
+    if(event)
+      this.quantity = event;
+
     const product = this.cart.find(item => item.productId === this.productId); 
 
     if(product){

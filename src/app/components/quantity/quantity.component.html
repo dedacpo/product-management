@@ -4,7 +4,7 @@
             <button aria-label="remove" (click)="remove()">
                 <mat-icon class="icon-add-remove" aria-hidden="true">remove_circle_outline</mat-icon>
             </button>
-            <input [disabled]="isEditable" (ngModelChange)="updateStatusButton($event)" [ngModel]="quantity" />
+            <input type="number" [disabled]="isEditable" (ngModelChange)="updateStatusButton($event)" [ngModel]="quantity" />
             <button aria-label="add" (click)="add()">
                 <mat-icon class="icon-add-remove" aria-hidden="true">add_circle_outline</mat-icon>
             </button>    

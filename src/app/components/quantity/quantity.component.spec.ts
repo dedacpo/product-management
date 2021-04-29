@@ -68,29 +68,26 @@ describe('QuantityComponent', () => {
     expect(component.button.disabled).toBeFalsy();
   });
 
-  it('should set quantity and button config to add when updateStatusButton is called and the product is not on cart yet', () => {
-    component.productId = 'product_fake2';
-    component.cart = [
-      {
-        productId: 'product_fake',
-        quantity: 2
-      }
-    ]
-    component.updateStatusButton(1);
-    expect(component.quantity).toEqual(1);
-    expect(component.button.name).toEqual('add');
-    expect(component.button.disabled).toBeFalsy();
-  });
-
+  
   it('should set quantity to zero if event passed is zero', () => {   
     component.updateStatusButton();
     expect(component.quantity).toEqual(0);
   });
 
-  it('should not set quantity if the event is not a number or empty', () => { 
-    component.quantity = 5;  
-    component.updateStatusButton('a');
-    expect(component.quantity).toEqual(5);
+  it('should set disabled button to false if the product doesnt exist in the cart', () => { 
+    component.productId = 'product_fake3';
+    component.cart = [
+      {
+        productId: 'product_fake',
+        quantity: 2
+      },
+      {
+        productId: 'product_fake2',
+        quantity: 5
+      }
+    ]
+    component.updateStatusButton(5);
+    expect(component.button.disabled).toBeFalse();
   });
 
   it('should not set quantity if the event is not a number or empty', () => { 
