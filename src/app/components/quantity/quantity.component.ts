@@ -42,8 +42,8 @@ export class QuantityComponent implements OnInit {
 
     if(event && isNaN(Number(event))) return
 
-    if(event){
-      this.quantity = event;
+    if(event || event == ''){
+      this.quantity = Number(event);
     }    
     const product = this.cart.find(item => item.productId === this.productId); 
 

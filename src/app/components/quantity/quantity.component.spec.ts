@@ -93,6 +93,11 @@ describe('QuantityComponent', () => {
     expect(component.quantity).toEqual(5);
   });
 
+  it('should not set quantity if the event is not a number or empty', () => { 
+    component.updateStatusButton('');
+    expect(component.quantity).toEqual(0);
+  });
+
   it('should not call configure cart if button is disabled', () => {
     const spy = spyOn(component, 'configureCart');
     component.button.disabled = true; 
