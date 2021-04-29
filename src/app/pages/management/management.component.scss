@@ -37,3 +37,10 @@ input{
 .iconDanger{
     color: $danger;
 }
+
+@media (max-width : 1199px){
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 100%;        
+        padding: 0 60px
+    }
+}

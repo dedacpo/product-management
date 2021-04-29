@@ -25,3 +25,15 @@ header{
         }
     }    
 }
+
+@media (min-width: 440px) and (max-width : 880px){
+    .title{
+        font-size: 25px;
+    }
+}
+
+@media (max-width : 440px){
+    .title{
+        font-size: 18px;
+    }
+}
