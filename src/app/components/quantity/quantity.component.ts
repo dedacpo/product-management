@@ -38,17 +38,26 @@ export class QuantityComponent implements OnInit {
     });
   }
 
-  updateStatusButton(event?: number) {
+  updateStatusButton(event?) {
+
+    if(event && isNaN(Number(event))) return
+
     if(event){
       this.quantity = event;
-    }
-    const product = this.cart.find(item => item.productId === this.productId);
-    if (product) {
+    }    
+    const product = this.cart.find(item => item.productId === this.productId); 
+
+    if(product){
       this.button.name = 'update';
-    } else {
-      this.button.name = 'add';
-    }
-    this.button.disabled = false;
+      this.button.disabled = false;
+    }else {
+      if(this.quantity == 0){
+        this.button.disabled = true;
+        return
+      }
+      this.button.disabled = false;
+      this.button.name  = 'add';
+    }   
   }
 
   addToCart() {

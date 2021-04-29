@@ -90,7 +90,7 @@ describe('StoreComponent', () => {
     expect(component.filteredProducts).toEqual([storeResult[1], storeResult[0]]);
   });
 
-  it('should order the product in desc order by the field value', () => {
+  it('should order the product in desc order by the field value even if there is no event passed', () => {
     component.order = {
       field: 'value',
       order: 'desc'
@@ -99,5 +99,6 @@ describe('StoreComponent', () => {
     component.orderProducts();
     expect(component.filteredProducts).toEqual([storeResult[1], storeResult[0]]);
   });
+
 
 });
